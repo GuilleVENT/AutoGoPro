@@ -67,7 +67,7 @@ Ensure your system meets the following requirements before installation:
 
      `sudo pacman -Syu gphoto2 jq ffmpeg`
      
-   - ** macOS **
+   - **macOS**
 
       `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` 
 
