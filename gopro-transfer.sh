@@ -146,16 +146,16 @@ run_video_conversion() {
     # Enable case-insensitive and nullglob (no match returns empty array)
     shopt -s nocaseglob nullglob
 
-    # Gather all .mp4 files (case-insensitive)
-    mp4_files=("$date_folder"/*.mp4)
+    # Gather all video files with specified extensions (case-insensitive)
+    video_files=("$date_folder"/*.{mp4,mkv,avi,mov})
 
-    if [[ ${#mp4_files[@]} -eq 0 ]]; then
-        echo "$(date): No MP4 files found in $date_folder. Skipping conversion."
+    if [[ ${#video_files[@]} -eq 0 ]]; then
+        echo "$(date): No video files found in $date_folder. Skipping conversion."
         shopt -u nocaseglob nullglob
         return
     fi
 
-    for file in "${mp4_files[@]}"; do
+    for file in "${video_files[@]}"; do
         if [[ -f "$file" ]]; then
             echo "$(date): Preparing to convert '$file'..."
 
