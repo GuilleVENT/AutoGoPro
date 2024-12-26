@@ -63,17 +63,18 @@ Ensure your system meets the following requirements before installation:
      sudo apt-get install -y gphoto2 jq ffmpeg python3-pip
      ```
 
-   - **Other Distributions:**
+   - **Arch Linux:**
 
-     Use your distribution's package manager to install the required utilities.
+     `sudo pacman -Syu gphoto2 jq ffmpeg`
+     
+   - ** macOS **
+
+      `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` 
+
 
 3. **Python Dependencies**
 
-   Install any required Python packages. Assuming your Python script uses standard libraries or specifies dependencies, use `pip` to install them.
-
-   ```bash
-   pip3 install -r requirements.txt
-   ```
+   No python dependencies. All packages used are from Python's standard library. I'm currently running `Python 3.13.1`
 
 4. **Set Executable Permissions**
 
@@ -204,9 +205,9 @@ Before running the script, configure the `transfer_config.json` and `conversion_
 
    Ensure your GoPro is connected to your computer via USB and is in the appropriate mode to allow file transfers.
 
-2. **Run the Shell Script:**
+2. **Run the Shell Script (manually)**
 
-   Execute the shell script to initiate the transfer and conversion process.
+   Execute the shell script to initiate the transfer and conversion process. Run it manually first, set up the deamon later.
 
    ```bash
    ./gopro_transfer_daemon.sh
