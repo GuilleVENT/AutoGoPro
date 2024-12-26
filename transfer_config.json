@@ -1,0 +1,6 @@
+{
+    "delete_from_sd_after": true,
+    "force_overwrite": true,
+    "only_new": false,
+    "delete_non_mp4": true
+}

@@ -1,0 +1,15 @@
+{
+  "conversion": true,
+  "resolution": "1080",
+  "bitrate": "high",
+  "codec": "h265",
+  "quality": false,
+  "crop": false,
+  "remove": false,
+  "cut": false,
+  "length": false,
+  "rm_audio": false,
+  "keep_gps": true,
+  "extract_gpx": false,
+  "bright": false
+}
