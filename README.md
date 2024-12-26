@@ -1,8 +1,3 @@
-Certainly! Below is the complete **README** for your **GoPro Transfer and Conversion Daemon** project. You can easily create a `README.md` file on your local machine by following the instructions provided after the content.
-
----
-
-```markdown
 # GoPro Transfer and Conversion Daemon
 
 Automate the transfer and conversion of your GoPro videos with ease using this comprehensive shell and Python-based solution. Designed for efficiency and flexibility, this project ensures your GoPro footage is seamlessly downloaded, organized, and converted according to your specified configurations.
@@ -53,8 +48,8 @@ Ensure your system meets the following requirements before installation:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/gopro-transfer-daemon.git
-   cd gopro-transfer-daemon
+   git clone https://github.com/GuilleVENT/AutoGoPro.git
+   cd AutoGoPro
    ```
 
 2. **Install Dependencies**
@@ -80,8 +75,6 @@ Ensure your system meets the following requirements before installation:
    pip3 install -r requirements.txt
    ```
 
-   *Note: Create a `requirements.txt` file listing any Python dependencies if necessary.*
-
 4. **Set Executable Permissions**
 
    Ensure the shell script has executable permissions.
@@ -95,7 +88,7 @@ Ensure your system meets the following requirements before installation:
    Ensure the following directory structure exists:
 
    ```
-   gopro-transfer-daemon/
+   AutoGoPro/
    ├── gopro_transfer_daemon.sh
    ├── vidconv.py
    ├── transfer_config.json
@@ -199,7 +192,7 @@ Before running the script, configure the `transfer_config.json` and `conversion_
 
 **Notes:**
 
-- **Supported Video Formats:** The script now supports multiple video file formats, including `.mp4`, `.mkv`, `.avi`, and `.mov`, regardless of their case (e.g., `.MP4`, `.MKV`).
+- **Supported Video Formats:** The script supports multiple video file formats, including `.mp4`, `.mkv`, `.avi`, and `.mov`, regardless of their case (e.g., `.MP4`, `.MKV`).
 - **`cut` Parameter Constraints:**
   - If `cut` is an array, it must contain **exactly two** timestamps.
   - If `cut` is a single timestamp string, `length` must be specified.
@@ -227,19 +220,10 @@ Before running the script, configure the `transfer_config.json` and `conversion_
    tail -f /var/log/gopro_transfer_daemon_debug.log
    ```
 
-4. **Automate with Cron (Optional):**
+4. **Set the Deamon: UDEV Rule when the GoPro Camera is connected**
 
-   To automate the script to run at regular intervals, add a cron job.
+   ToDo write write-up
 
-   ```bash
-   crontab -e
-   ```
-
-   **Example Cron Entry (Runs every day at 2 AM):**
-
-   ```cron
-   0 2 * * * /path/to/gopro_transfer_daemon.sh
-   ```
 
 ## Script Overview
 
@@ -313,10 +297,9 @@ Before running the script, configure the `transfer_config.json` and `conversion_
 **Usage Example:**
 
 ```bash
-python3 /home/admin/vidconv.py input.mp4 --resolution 720 --bitrate mid --codec h265 --quality 20 --crop --rm_audio --keep_gps --extract_gpx --cut 00:01:30 00:02:00 --bright
+python3 vidconv.py input.mp4 --resolution 720 --bitrate mid --codec h265 --quality 20 --crop --rm_audio --keep_gps --extract_gpx --cut 00:01:30 00:02:00 --bright
 ```
 
-**Note:** Ensure that the Python script is executable and correctly located at `/home/admin/vidconv.py` or update the shell script accordingly.
 
 ## Logging
 
@@ -448,83 +431,3 @@ Contributions are welcome! Whether it's bug fixes, feature enhancements, or docu
 ## License
 
 This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute this software as per the terms of the license.
-
----
-
-*For any further questions or assistance, feel free to reach out to the project maintainer at [youremail@example.com](mailto:youremail@example.com).*
-```
-
----
-
-## How to Create and Download the README
-
-Since I cannot provide direct download links, you can easily create the `README.md` file yourself by following these steps:
-
-1. **Open a Terminal or Command Prompt:**
-
-   Navigate to the root directory of your project where you want the `README.md` file to reside.
-
-2. **Create the `README.md` File:**
-
-   Use a text editor like `nano`, `vim`, or any GUI-based editor. Here's how to do it using `nano`:
-
-   ```bash
-   nano README.md
-   ```
-
-3. **Paste the README Content:**
-
-   Copy the entire content from the markdown block above (everything between the ```markdown and ``` lines) and paste it into the `nano` editor.
-
-4. **Save and Exit:**
-
-   - If you're using `nano`, press `CTRL + O` to write out the changes, then press `Enter` to confirm.
-   - Press `CTRL + X` to exit the editor.
-
-5. **Verify the File:**
-
-   List the files in the directory to ensure `README.md` has been created.
-
-   ```bash
-   ls -l README.md
-   ```
-
-6. **View the README (Optional):**
-
-   You can view the content of the README using:
-
-   ```bash
-   cat README.md
-   ```
-
-   Or, for a paginated view:
-
-   ```bash
-   less README.md
-   ```
-
-## Additional Tips
-
-- **GitHub Integration:**
-
-  If you're using GitHub, committing and pushing the `README.md` file to your repository will render it automatically on the repository's main page.
-
-  ```bash
-  git add README.md
-  git commit -m "Add comprehensive README"
-  git push origin main
-  ```
-
-- **Editing in the Future:**
-
-  You can always update the `README.md` by reopening it in your preferred text editor and making the necessary changes.
-
-- **Markdown Preview:**
-
-  To view the formatted README, consider using a Markdown preview tool or editor that supports live previews, such as:
-
-  - **VS Code:** Offers built-in Markdown preview (`CTRL + Shift + V`).
-  - **Atom:** Has Markdown preview packages available.
-  - **Online Editors:** Websites like [Dillinger](https://dillinger.io/) allow you to paste and view Markdown content instantly.
-
-If you encounter any issues or have further questions while setting up the README or your project, feel free to ask!
